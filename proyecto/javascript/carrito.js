@@ -1,14 +1,15 @@
-// Carrito de compras
+// array para guardar los productos del carrito
+// use localStorage para que no se pierda cuando recargue la pagina
 let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
-// Stock de productos
+// cuantos productos tengo en stock (los puse yo manualmente)
 const stockProductos = {
-    'ps5': 5,
+    'ps5': 5,                    // solo quedan 5 PS5
     'nintendo-oled': 8,
-    'nintendo-switch-2': 3,
+    'nintendo-switch-2': 3,      // este es nuevo, pocos en stock
     'xbox-series-x': 6,
-    'steam-deck': 2,
-    'ps5-pro': 1,
+    'steam-deck': 2,             // caros, pocos
+    'ps5-pro': 1,                // solo uno porque es carísima
     'xbox-series-s': 7,
     'memoria-ssd': 15,
     'audifono-blackshark': 12,
@@ -17,38 +18,43 @@ const stockProductos = {
     'teclado-mecanico': 6,
     'mouse-gaming': 9,
     'webcam-gaming': 4,
-    'exploding-kittens': 20,
+    'exploding-kittens': 20,     // juegos de mesa hay más stock
     'wolfenstein-mesa': 5,
     'kienpake': 15,
     '31-minutos': 10,
     'monopoly-gamer': 8,
-    'uno-flip': 25,
+    'uno-flip': 25,              // muchas porque se venden bien
     'jenga-classic': 18
 };
 
-// Función para verificar stock disponible
+// funcion para revisar si hay stock suficiente
 function verificarStock(id, cantidadDeseada = 1) {
-    const stockDisponible = stockProductos[id] || 0;
+    const stockDisponible = stockProductos[id] || 0;     // cuanto stock hay
+    // buscar cuantos ya tengo en el carrito
     const cantidadEnCarrito = carrito.find(item => item.id === id)?.cantidad || 0;
+    // si hay suficiente stock devuelve true
     return stockDisponible - cantidadEnCarrito >= cantidadDeseada;
 }
 
-// Función para agregar al carrito
+// esta es la funcion mas importante - agregar productos al carrito
 function agregarAlCarrito(id, nombre, precio, imagen) {
-    console.log('Agregando al carrito:', { id, nombre, precio, imagen });
+    console.log('Agregando al carrito:', { id, nombre, precio, imagen });  // para debugging
     
-    // Verificar stock antes de agregar
+    // primero revisar si hay stock
     if (!verificarStock(id)) {
         mostrarNotificacion(`Sin stock disponible para ${nombre}`, 'error');
-        return;
+        return;  // salir de la funcion si no hay stock
     }
     
+    // buscar si el producto ya esta en el carrito
     const productoExistente = carrito.find(item => item.id === id);
     
     if (productoExistente) {
+        // si ya esta, solo aumentar la cantidad
         productoExistente.cantidad += 1;
         console.log('Producto existente, nueva cantidad:', productoExistente.cantidad);
     } else {
+        // si no esta, agregarlo nuevo
         carrito.push({
             id: id,
             nombre: nombre,
@@ -59,37 +65,45 @@ function agregarAlCarrito(id, nombre, precio, imagen) {
         console.log('Producto nuevo agregado');
     }
     
+    // guardar en localStorage para que no se pierda
     localStorage.setItem('carrito', JSON.stringify(carrito));
     console.log('Carrito actualizado:', carrito);
     
+    // actualizar el contador y los botones
     actualizarContadorCarrito();
     actualizarBotonesStock();
     mostrarNotificacion(`${nombre} agregado al carrito`);
 }
 
-// Función para actualizar contador del carrito
+// actualizar el numerito rojo del carrito
 function actualizarContadorCarrito() {
-    const contador = document.getElementById('cart-count');
+    const contador = document.getElementById('cart-count');   // buscar el elemento del contador
     if (contador) {
+        // contar todos los productos en el carrito
         const totalItems = carrito.reduce((total, item) => total + item.cantidad, 0);
-        contador.textContent = totalItems;
+        contador.textContent = totalItems;  // poner el numero
+        
         if (totalItems > 0) {
+            // si hay productos, mostrar el contador
             contador.style.display = 'flex';
             contador.classList.add('show');
         } else {
+            // si no hay nada, ocultarlo
             contador.style.display = 'none';
             contador.classList.remove('show');
         }
     }
 }
 
-// Función para mostrar notificación
+// mostrar mensajitos cuando se agrega algo al carrito
 function mostrarNotificacion(mensaje, tipo = 'success') {
     const notificacion = document.createElement('div');
     notificacion.textContent = mensaje;
     
-    const color = tipo === 'error' ? '#ff4444' : 'var(--accent)';
+    // elegir el color segun si es error o exitoso
+    const color = tipo === 'error' ? '#ff4444' : 'var(--accent)';   
     
+    // aplicar todos los estilos de una vez
     notificacion.style.cssText = `
         position: fixed;
         top: 20px;
@@ -102,8 +116,9 @@ function mostrarNotificacion(mensaje, tipo = 'success') {
         animation: fadeIn 0.3s ease;
     `;
     
-    document.body.appendChild(notificacion);
+    document.body.appendChild(notificacion);   // agregar al DOM
     
+    // quitar la notificacion despues de 3 segundos
     setTimeout(() => {
         notificacion.remove();
     }, 3000);
@@ -226,13 +241,20 @@ function vaciarCarrito() {
     mostrarNotificacion('Carrito vaciado');
 }
 
-// Función para proceder al pago
+// por ahora solo mostrar un alert para el pago (despues hare el pago real)
 function procederPago() {
-    alert('Funcionalidad de pago en desarrollo. Total: $' + carrito.reduce((total, item) => total + (item.precio * item.cantidad), 0).toLocaleString());
+    const total = carrito.reduce((total, item) => total + (item.precio * item.cantidad), 0);
+    alert('Funcionalidad de pago en desarrollo. Total: $' + total.toLocaleString());
 }
 
-// Inicializar contador al cargar la página
+// cuando cargue la pagina, inicializar todo
 document.addEventListener('DOMContentLoaded', function() {
-    actualizarContadorCarrito();
-    actualizarBotonesStock();
+    actualizarContadorCarrito();   // actualizar el contador
+    actualizarBotonesStock();      // revisar que botones mostrar
 });
+
+// TODO: agregar mas funciones como:
+// - guardar favoritos
+// - comparar productos  
+// - filtros por categoria
+// - paginacion cuando haya muchos productos

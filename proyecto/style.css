@@ -1,18 +1,17 @@
-/* VARIABLES GLOBALES */
+/* colores que voy a usar en toda la pagina */
 :root {
-  --bg: #000000;      /* fondo principal */
-  --text: #ffffff;    /* texto blanco */
-  --text-2: #d3d3d3;  /* texto secundario */
-  --primary: #1E90FF; /* azul eléctrico */
-  --accent: #39FF14;  /* verde neón */
-  --muted: #111111;   /* fondo para barras */
-  --border: #1f1f1f;  /* bordes discretos */
-  --mg: #FF00FF;    /* magenta neon*/
-
+  --bg: #000000;      /* negro para el fondo */
+  --text: #ffffff;    /* blanco para texto */
+  --text-2: #d3d3d3;  /* gris claro para texto secundario */
+  --primary: #1E90FF; /* azul que me gusta */
+  --accent: #39FF14;  /* verde neon que se ve cool */
+  --muted: #111111;   /* gris oscuro para barras */
+  --border: #1f1f1f;  /* para los bordes */
+  --mg: #FF00FF;    /* magenta (no se si lo uso) */
 }
 
 
-/*top bar con redes sociales*/
+/* la barra de arriba con las redes sociales */
 .top-bar.thin {
   background: var(--primary);  
   color: white;
@@ -58,33 +57,43 @@
 
 
 /* RESET */
-* { box-sizing: border-box; margin: 0; padding: 0; }
+/* reset basico para todos los elementos */
+* { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+}
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', sans-serif;  /* la fuente principal */
   background: var(--bg);
   color: var(--text);
   line-height: 1.5;
   display: flex;
   flex-direction: column;
-  min-height: 100vh; 
+  min-height: 100vh;   /* que ocupe toda la pantalla */
   margin: 0;
 }
 
+/* el contenedor principal */
 main.container {
   flex: 1;
 }
 
-a { text-decoration: none; color: inherit; }
+/* quitar el subrayado de los links */
+a { 
+  text-decoration: none; 
+  color: inherit; 
+}
 
-/* HEADER: LOGO + ACCIONES */
+/* header principal con logo y botones */
 .top-bar {
   background: var(--bg);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 12px 6vw;
-  border-bottom: 1px solid var(--muted);
+  border-bottom: 1px solid var(--muted);   /* una linea gris abajo */
   flex-wrap: wrap;
   gap: 15px;
 }
