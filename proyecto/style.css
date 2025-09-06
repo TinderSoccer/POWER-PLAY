@@ -85,6 +85,8 @@ a { text-decoration: none; color: inherit; }
   justify-content: space-between;
   padding: 12px 6vw;
   border-bottom: 1px solid var(--muted);
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
 /* logo */
@@ -110,6 +112,7 @@ a { text-decoration: none; color: inherit; }
   flex: 1;
   justify-content: center;
   max-width: 500px;
+  min-width: 250px;
 }
 .search-bar input {
   width: 80%;
@@ -136,6 +139,7 @@ a { text-decoration: none; color: inherit; }
   display: flex;
   gap: 20px;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .user-actions .action {
@@ -344,7 +348,7 @@ a { text-decoration: none; color: inherit; }
 .navbar {
   background: #0a0a0a;
   border-bottom: 1px solid var(--border);
-  overflow-x: auto; /* permite scroll en pantallas pequeñas */
+  position: relative;
 }
 .navbar ul {
   display: flex;
@@ -365,6 +369,95 @@ a { text-decoration: none; color: inherit; }
 .navbar a:hover {
   background: rgba(57,255,20,0.1);
   color: var(--accent);
+}
+
+/* Contador del carrito */
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #ff4444;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  display: none;
+}
+
+/* Menu hamburguesa (oculto por defecto) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 15px;
+  background: none;
+  border: none;
+  color: var(--text);
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: var(--text);
+  margin: 3px 0;
+  transition: 0.3s;
+}
+
+/* Animación del hamburger cuando está activo */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Responsive para navbar */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 20px;
+    z-index: 1000;
+  }
+  
+  .navbar ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #0a0a0a;
+    flex-direction: column;
+    padding: 20px 0;
+    border-top: 1px solid var(--border);
+    z-index: 999;
+  }
+  
+  .navbar ul.active {
+    display: flex;
+  }
+  
+  .navbar li {
+    text-align: center;
+    padding: 10px 0;
+  }
+  
+  .navbar a {
+    display: block;
+    padding: 10px 20px;
+    width: 100%;
+  }
 }
 
 /* Sección de productos */
@@ -912,8 +1005,124 @@ footer {
   margin-top: 10px;
 }
 
-/* Responsive Design */
+/* Responsive Design - Header y Layout Principal */
+@media (max-width: 1024px) {
+  .top-bar.thin {
+    padding: 8px 4vw;
+  }
+  
+  .user-actions {
+    gap: 15px;
+  }
+  
+  .user-actions .action span {
+    font-size: 0.8rem;
+  }
+}
+
 @media (max-width: 768px) {
+  /* Header responsive */
+  .top-bar.thin {
+    flex-direction: column;
+    gap: 5px;
+    padding: 8px 4vw;
+  }
+  
+  .top-bar.thin .social,
+  .top-bar.thin .user-links {
+    text-align: center;
+  }
+  
+  .top-bar {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px 4vw;
+  }
+  
+  .logo {
+    order: 1;
+  }
+  
+  .search-bar {
+    order: 2;
+    width: 100%;
+    max-width: none;
+  }
+  
+  .search-bar input {
+    width: 100%;
+  }
+  
+  .user-actions {
+    order: 3;
+    gap: 10px;
+  }
+  
+  .user-actions .action {
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .icon-circle {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 0;
+  }
+  
+  .icon-circle .icon {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .user-actions .action span {
+    font-size: 0.8rem;
+  }
+  
+  /* Layout principal - sidebar oculto en móvil */
+  .layout {
+    grid-template-columns: 1fr;
+    padding: 20px 4vw;
+  }
+  
+  .sidebar {
+    display: none;
+  }
+  
+  /* Hero responsive */
+  .hero {
+    padding: 20px;
+    margin-bottom: 15px;
+  }
+  
+  .hero h2 {
+    font-size: 1.5rem;
+  }
+  
+  /* Productos responsive */
+  .productos {
+    padding: 15px;
+  }
+  
+  .productos-lista {
+    padding: 10px;
+    gap: 15px;
+  }
+  
+  .producto {
+    max-width: 150px;
+  }
+  
+  .producto img {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .producto h3 {
+    font-size: 0.9rem;
+  }
+  
+  /* Product detail responsive */
   .product-detail {
     grid-template-columns: 1fr;
     gap: 20px;
@@ -939,6 +1148,38 @@ footer {
   .shipping-option {
     flex-direction: column;
     text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Ajustes para pantallas muy pequeñas */
+  .logo h1 {
+    font-size: 1.1rem;
+  }
+  
+  .user-actions .action span {
+    display: none;
+  }
+  
+  .hero {
+    padding: 15px;
+  }
+  
+  .hero h2 {
+    font-size: 1.3rem;
+  }
+  
+  .producto {
+    max-width: 130px;
+  }
+  
+  .producto img {
+    width: 130px;
+    height: 130px;
+  }
+  
+  .productos-lista {
+    gap: 10px;
   }
 }
 

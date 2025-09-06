@@ -50,9 +50,10 @@
           </div>
           <span>Mis Favoritos</span>
         </a>
-        <a href="#" class="action">
+        <a href="#" class="action" onclick="verCarrito()">
           <div class="icon-circle">
             <img src="icons/carrito.png" alt="Carrito" class="icon">
+            <span id="cart-count" class="cart-count">0</span>
           </div>
           <span>Carrito</span>
         </a>
@@ -67,7 +68,12 @@
 
     <!-- menu -->
     <nav class="navbar">
-      <ul>
+      <button class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul id="navbar-menu">
         <li><a href="#">Juegos🎲</a></li>
         <li><a href="#">Accesorios🎧</a></li>
         <li><a href="#">Consolas🎮</a></li>
@@ -376,5 +382,7 @@
 
 <script src="javascript/carrusel.js"></script>
 <script src="javascript/banner.js"></script>
+<script src="javascript/carrito.js"></script>
+<script src="javascript/mobile-menu.js"></script>
 </body>
 </html>
