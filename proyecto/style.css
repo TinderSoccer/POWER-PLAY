@@ -501,6 +501,31 @@ a { text-decoration: none; color: inherit; }
   font-size: 1rem;        
 }
 
+.producto-precio {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--accent);
+  text-align: center;
+  margin: 10px 0;
+}
+
+.btn-agregar-carrito {
+  width: 100%;
+  padding: 10px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.3s ease;
+}
+
+.btn-agregar-carrito:hover {
+  background: #45cc15;
+}
+
 
 .productos-container {
   display: flex; 
