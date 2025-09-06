@@ -180,65 +180,11 @@ a { text-decoration: none; color: inherit; }
   object-fit: contain;
 }
 
-/* LAYOUT: SIDEBAR + CONTENT */
+/* LAYOUT: CONTENT */
 .layout {
-  display: grid;
-  grid-template-columns: 240px 1fr;
-  gap: 20px;
   padding: 20px 6vw;
 }
 
-/*efecto categoria*/
-.sidebar {
-  padding: 15px 0px;  
-}
-.sidebar h3 {
-  font-family: 'Orbitron', sans-serif;
-  margin-bottom: 12px;
-  color: var(--primary);
-}
-.sidebar ul {
-  list-style: none;
-}
-.sidebar li {
-  margin: 8px 0;
-}
-.sidebar a {
-  color: var(--text-2);
-  transition: color 0.2s;
-}
-.sidebar a:hover {
-  color: var(--accent);
-}
-
-/* Estilo para categoria raya debajo */
-.sidebar ul li a {
-  display: block;
-  padding: 6px 0px;
-  color: var(--text-2);
-  position: relative;
-  transition: color 0.3s ease;
-}
-
-/* Efecto de subrayado animado */
-.sidebar ul li a::after {
-  content: "";
-  position: absolute;
-  bottom: 0; 
-  left: 0;
-  width: 0%;
-  height: 2px;
-  background: linear-gradient(90deg, red, orange, yellow, lime, cyan, blue, violet);
-  transition: width 0.3s ease;
-}
-.sidebar ul li a:hover::after {
-  width: 100%;
-}
-
-/* Quitar la última rayita de categoria */
-.sidebar ul li:last-child a {
-  border-bottom: none;
-}
 
 
 
@@ -1119,14 +1065,9 @@ footer {
     font-size: 0.8rem;
   }
   
-  /* Layout principal - sidebar oculto en móvil */
+  /* Layout principal */
   .layout {
-    grid-template-columns: 1fr;
     padding: 20px 4vw;
-  }
-  
-  .sidebar {
-    display: none;
   }
   
   /* Hero responsive */

@@ -1,9 +1,47 @@
 // Carrito de compras
 let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
+// Stock de productos
+const stockProductos = {
+    'ps5': 5,
+    'nintendo-oled': 8,
+    'nintendo-switch-2': 3,
+    'xbox-series-x': 6,
+    'steam-deck': 2,
+    'ps5-pro': 1,
+    'xbox-series-s': 7,
+    'memoria-ssd': 15,
+    'audifono-blackshark': 12,
+    'control-dualsense': 10,
+    'audifono-pulse': 8,
+    'teclado-mecanico': 6,
+    'mouse-gaming': 9,
+    'webcam-gaming': 4,
+    'exploding-kittens': 20,
+    'wolfenstein-mesa': 5,
+    'kienpake': 15,
+    '31-minutos': 10,
+    'monopoly-gamer': 8,
+    'uno-flip': 25,
+    'jenga-classic': 18
+};
+
+// Función para verificar stock disponible
+function verificarStock(id, cantidadDeseada = 1) {
+    const stockDisponible = stockProductos[id] || 0;
+    const cantidadEnCarrito = carrito.find(item => item.id === id)?.cantidad || 0;
+    return stockDisponible - cantidadEnCarrito >= cantidadDeseada;
+}
+
 // Función para agregar al carrito
 function agregarAlCarrito(id, nombre, precio, imagen) {
     console.log('Agregando al carrito:', { id, nombre, precio, imagen });
+    
+    // Verificar stock antes de agregar
+    if (!verificarStock(id)) {
+        mostrarNotificacion(`Sin stock disponible para ${nombre}`, 'error');
+        return;
+    }
     
     const productoExistente = carrito.find(item => item.id === id);
     
@@ -25,6 +63,7 @@ function agregarAlCarrito(id, nombre, precio, imagen) {
     console.log('Carrito actualizado:', carrito);
     
     actualizarContadorCarrito();
+    actualizarBotonesStock();
     mostrarNotificacion(`${nombre} agregado al carrito`);
 }
 
@@ -45,14 +84,17 @@ function actualizarContadorCarrito() {
 }
 
 // Función para mostrar notificación
-function mostrarNotificacion(mensaje) {
+function mostrarNotificacion(mensaje, tipo = 'success') {
     const notificacion = document.createElement('div');
     notificacion.textContent = mensaje;
+    
+    const color = tipo === 'error' ? '#ff4444' : 'var(--accent)';
+    
     notificacion.style.cssText = `
         position: fixed;
         top: 20px;
         right: 20px;
-        background: var(--accent);
+        background: ${color};
         color: white;
         padding: 15px 20px;
         border-radius: 5px;
@@ -65,6 +107,33 @@ function mostrarNotificacion(mensaje) {
     setTimeout(() => {
         notificacion.remove();
     }, 3000);
+}
+
+// Función para actualizar botones según stock
+function actualizarBotonesStock() {
+    document.querySelectorAll('.btn-agregar-carrito').forEach(boton => {
+        const onclick = boton.getAttribute('onclick');
+        if (onclick) {
+            // Extraer el ID del producto del onclick
+            const match = onclick.match(/'([^']+)'/);
+            if (match) {
+                const productId = match[1];
+                const stockDisponible = verificarStock(productId);
+                
+                if (!stockDisponible) {
+                    boton.disabled = true;
+                    boton.textContent = 'Sin Stock';
+                    boton.style.background = '#666';
+                    boton.style.cursor = 'not-allowed';
+                } else {
+                    boton.disabled = false;
+                    boton.textContent = 'Agregar al Carrito';
+                    boton.style.background = 'var(--accent)';
+                    boton.style.cursor = 'pointer';
+                }
+            }
+        }
+    });
 }
 
 // Función para ver carrito
@@ -165,4 +234,5 @@ function procederPago() {
 // Inicializar contador al cargar la página
 document.addEventListener('DOMContentLoaded', function() {
     actualizarContadorCarrito();
+    actualizarBotonesStock();
 });
