@@ -3,10 +3,13 @@ let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
 // Función para agregar al carrito
 function agregarAlCarrito(id, nombre, precio, imagen) {
+    console.log('Agregando al carrito:', { id, nombre, precio, imagen });
+    
     const productoExistente = carrito.find(item => item.id === id);
     
     if (productoExistente) {
         productoExistente.cantidad += 1;
+        console.log('Producto existente, nueva cantidad:', productoExistente.cantidad);
     } else {
         carrito.push({
             id: id,
@@ -15,9 +18,12 @@ function agregarAlCarrito(id, nombre, precio, imagen) {
             imagen: imagen,
             cantidad: 1
         });
+        console.log('Producto nuevo agregado');
     }
     
     localStorage.setItem('carrito', JSON.stringify(carrito));
+    console.log('Carrito actualizado:', carrito);
+    
     actualizarContadorCarrito();
     mostrarNotificacion(`${nombre} agregado al carrito`);
 }
@@ -28,7 +34,13 @@ function actualizarContadorCarrito() {
     if (contador) {
         const totalItems = carrito.reduce((total, item) => total + item.cantidad, 0);
         contador.textContent = totalItems;
-        contador.style.display = totalItems > 0 ? 'block' : 'none';
+        if (totalItems > 0) {
+            contador.style.display = 'flex';
+            contador.classList.add('show');
+        } else {
+            contador.style.display = 'none';
+            contador.classList.remove('show');
+        }
     }
 }
 
