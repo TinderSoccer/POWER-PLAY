@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Level-Up Gamer</title>
   <!-- las fuentes que encontre en google fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
@@ -34,11 +33,10 @@
   <!-- header principal -->
   <header>
     <div class="top-bar">
+      <!-- logo con el icono de gamepad que se ve genial -->
       <div class="logo">
-        <a href="index.html" class="logo">
-          <i class="fa-solid fa-gamepad"></i>
-          <h1>Level-Up Gamer</h1>
-        </a>
+        <i class="fa-solid fa-gamepad"></i>
+        <h1>Level-Up Gamer</h1>
       </div>
 
       <!-- barra de busqueda -->
@@ -104,23 +102,18 @@
   </section>
 
   <!-- banner -->
+  <!-- banner carrusel sin Bootstrap -->
 <div class="banner-container">
   <div class="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <a href="detalle-producto.html?id=kirby" onclick="setProductData('kirby', 'Kirby Star Allies', 'banner/banner kirby.png', 'Juegos')">
         <img src="banner/banner kirby.png" alt="Banner 1" class="banner-img">
-        </a>
       </div>
       <div class="carousel-item">
-        <a href="detalle-producto.html?id=fifa26" onclick="setProductData('fifa26', 'FIFA 26 PS5', 'banner/FIFA26.png', 'Juegos')">
         <img src="banner/FIFA26.png" alt="Banner 2" class="banner-img">
-        </a>
       </div>
       <div class="carousel-item">
-        <a href="detalle-producto.html?id='hollowKnightSilksong" onclick="setProductData('hollowKnightSilksong', 'hollowKnightSilksong nintendo-switch-2', 'banner/ HOLLLOWKNIGTH', 'Juegos')">
         <img src="banner/HOLLLOWKNIGTH.png" alt="Banner 3" class="banner-img">
-        </a>
       </div>
     </div>
     <!-- indicadores -->
@@ -147,7 +140,7 @@
             <img src="imagenes/ps5.png" alt="PS5">
             <h3>Consola PlayStation 5 Slim</h3>
           </a>
-          <div class="producto-precio">$2.500.000</div>
+          <div class="producto-precio">$500.000</div>
           <button class="btn-agregar-carrito" onclick="agregarAlCarrito('ps5', 'Consola PlayStation 5 Slim', 2500000, 'imagenes/ps5.png')">
             Agregar al Carrito
           </button>
@@ -158,7 +151,7 @@
             <img src="imagenes/nintendo-oled.png" alt="Nintendo Switch">
             <h3>Consola Nintendo Switch Modelo OLED Neon</h3>
           </a>
-          <div class="producto-precio">$1.800.000</div>
+          <div class="producto-precio">$350.000</div>
           <button class="btn-agregar-carrito" onclick="agregarAlCarrito('nintendo-oled', 'Consola Nintendo Switch Modelo OLED Neon', 1800000, 'imagenes/nintendo-oled.png')">
             Agregar al Carrito
           </button>
@@ -169,7 +162,7 @@
             <img src="imagenes/nintenso-switch-2.png" alt="Nintendo Switch">
             <h3>Nintendo Switch 2</h3>
           </a>
-          <div class="producto-precio">$2.000.000</div>
+          <div class="producto-precio">$600.000</div>
           <button class="btn-agregar-carrito" onclick="agregarAlCarrito('nintendo-switch-2', 'Nintendo Switch 2', 2000000, 'imagenes/nintenso-switch-2.png')">
             Agregar al Carrito
           </button>
@@ -180,7 +173,7 @@
             <img src="imagenes/xbox.png" alt="Xbox">
             <h3>Xbox Series X 1 TB Digital Blanca</h3>
           </a>
-          <div class="producto-precio">$2.200.000</div>
+          <div class="producto-precio">$300.000</div>
           <button class="btn-agregar-carrito" onclick="agregarAlCarrito('xbox-series-x', 'Xbox Series X 1 TB Digital Blanca', 2200000, 'imagenes/xbox.png')">
             Agregar al Carrito
           </button>
@@ -191,7 +184,7 @@
             <img src="imagenes/steam-deck-512gb-oled.png" alt="Steam Deck">
             <h3>Steam Deck 512GB OLED</h3>
           </a>
-          <div class="producto-precio">$3.200.000</div>
+          <div class="producto-precio">$500.000</div>
           <button class="btn-agregar-carrito" onclick="agregarAlCarrito('steam-deck', 'Steam Deck 512GB OLED', 3200000, 'imagenes/steam-deck-512gb-oled.png')">
             Agregar al Carrito
           </button>
@@ -202,7 +195,7 @@
             <img src="imagenes/playstation-5-pro.png" alt="PS5 Pro">
             <h3>PlayStation 5 Pro</h3>
           </a>
-          <div class="producto-precio">$3.500.000</div>
+          <div class="producto-precio">$300.000</div>
           <button class="btn-agregar-carrito" onclick="agregarAlCarrito('ps5-pro', 'PlayStation 5 Pro', 3500000, 'imagenes/playstation-5-pro.png')">
             Agregar al Carrito
           </button>
@@ -213,7 +206,7 @@
             <img src="imagenes/xbox-series-s-digital.png" alt="Xbox Series S">
             <h3>Xbox Series S Digital Edition</h3>
           </a>
-          <div class="producto-precio">$1.500.000</div>
+          <div class="producto-precio">$300.000</div>
           <button class="btn-agregar-carrito" onclick="agregarAlCarrito('xbox-series-s', 'Xbox Series S Digital Edition', 1500000, 'imagenes/xbox-series-s-digital.png')">
             Agregar al Carrito
           </button>
@@ -462,7 +455,7 @@
   </div>
 </footer>
 
-<script src="javascript/derivacion-logo.js"></script>
+
 <script src="javascript/carrusel.js"></script>
 <script src="javascript/banner.js"></script>
 <script src="javascript/carrito.js"></script>
