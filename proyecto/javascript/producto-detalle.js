@@ -26,6 +26,76 @@ var productos = {
       'Conectividad': 'Wi-Fi 6, Bluetooth 5.1, Ethernet'
     }
   },
+  'kirby': {
+    nombre: 'Kirby and the Forgotten Land Switch',
+    categoria: 'Juegos de Video',
+    imagen: 'imagenes/juego-kirby.png',
+    precio: 51.999,
+    precioOriginal: 64.999,
+    descuento: 20,
+    descripcion: 'Aventura épica con Kirby. Salta, flota y derrota enemigos en coloridos mundos.',
+    caracteristicas: [
+        'Gráficos en HD',
+        'Múltiples niveles desafiantes',
+        'Modo cooperativo 2 jugadores',
+        'Música original de Kirby'
+    ],
+    especificaciones: {
+        'Plataforma': 'Nintendo Switch',
+        'Género': 'Aventura / Plataforma',
+        'Jugadores': '1-2',
+        'Edad': '+7 años',
+        'Idioma': 'Español / Inglés'
+    }
+  },
+  'fifa26': {
+    nombre: 'FIFA 26 PS5',
+    categoria: 'Juegos de Video',
+    imagen: 'imagenes/juego-fifa26.webp',
+    precio: 69.749,
+    precioOriginal: 74.999,
+    descuento: 7,
+    descripcion: '¡Preventa exclusiva de FIFA 26 para PS5! Vive la nueva era del fútbol con gráficos 4K, animaciones fluidas y controles adaptativos DualSense. Entrega digital el 24 de septiembre.',
+    caracteristicas: [
+        'Gráficos 4K y ultra-realistas',
+        'Tecnología HyperMotion: animaciones de fútbol más reales que nunca',
+        'Controles adaptativos DualSense y vibración háptica',
+        'Modos offline y online completos',
+        'Carga instantánea en PS5'
+    ],
+    especificaciones: {
+        'Plataforma': 'PS5 Digital',
+        'Género': 'Deportes / Fútbol',
+        'Jugadores': '1-4 (offline) / Multijugador online',
+        'Edad': '+3 años',
+        'Idioma': 'Español / Inglés / Multilenguaje',
+        
+    }
+},
+'hollowKnightSilksong': {
+    nombre: 'Hollow Knight: Silksong - Nintendo Switch',
+    categoria: 'Juegos de Video',
+    imagen: 'imagenes/juego-hollow-knight.webp',
+    precio: 49.499,
+    precioOriginal: 54.999,
+    descuento: 10,
+    descripcion: 'Acompaña a Hornet en su épica aventura en mundos oscuros y desafiantes. Explora, lucha y descubre secretos en Hollow Knight: Silksong para Nintendo Switch.',
+    caracteristicas: [
+        'Gráficos 2D detallados y animaciones fluidas',
+        'Nuevos enemigos, jefes y niveles',
+        'Exploración profunda estilo Metroidvania',
+        'Música original y envolvente',
+        'Compatibilidad con Nintendo Switch'
+    ],
+    especificaciones: {
+        'Plataforma': 'Nintendo Switch',
+        'Género': 'Aventura / Metroidvania',
+        'Jugadores': '1',
+        'Edad': '+7 años',
+        'Idioma': 'Español / Inglés'
+    }
+},
+
   'nintendo-oled': {
     nombre: 'Consola Nintendo Switch Modelo OLED Neon',
     categoria: 'Consolas',

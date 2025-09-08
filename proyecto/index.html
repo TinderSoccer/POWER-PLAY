@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Level-Up Gamer</title>
   <!-- las fuentes que encontre en google fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
@@ -33,10 +34,11 @@
   <!-- header principal -->
   <header>
     <div class="top-bar">
-      <!-- logo con el icono de gamepad que se ve genial -->
       <div class="logo">
-        <i class="fa-solid fa-gamepad"></i>
-        <h1>Level-Up Gamer</h1>
+        <a href="index.html" class="logo">
+          <i class="fa-solid fa-gamepad"></i>
+          <h1>Level-Up Gamer</h1>
+        </a>
       </div>
 
       <!-- barra de busqueda -->
@@ -102,18 +104,23 @@
   </section>
 
   <!-- banner -->
-  <!-- banner carrusel sin Bootstrap -->
 <div class="banner-container">
   <div class="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
+        <a href="detalle-producto.html?id=kirby" onclick="setProductData('kirby', 'Kirby Star Allies', 'banner/banner kirby.png', 'Juegos')">
         <img src="banner/banner kirby.png" alt="Banner 1" class="banner-img">
+        </a>
       </div>
       <div class="carousel-item">
+        <a href="detalle-producto.html?id=fifa26" onclick="setProductData('fifa26', 'FIFA 26 PS5', 'banner/FIFA26.png', 'Juegos')">
         <img src="banner/FIFA26.png" alt="Banner 2" class="banner-img">
+        </a>
       </div>
       <div class="carousel-item">
+        <a href="detalle-producto.html?id='hollowKnightSilksong" onclick="setProductData('hollowKnightSilksong', 'hollowKnightSilksong nintendo-switch-2', 'banner/ HOLLLOWKNIGTH', 'Juegos')">
         <img src="banner/HOLLLOWKNIGTH.png" alt="Banner 3" class="banner-img">
+        </a>
       </div>
     </div>
     <!-- indicadores -->
@@ -455,7 +462,7 @@
   </div>
 </footer>
 
-
+<script src="javascript/derivacion-logo.js"></script>
 <script src="javascript/carrusel.js"></script>
 <script src="javascript/banner.js"></script>
 <script src="javascript/carrito.js"></script>
