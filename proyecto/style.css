@@ -8,6 +8,8 @@
   --muted: #111111;   /* gris oscuro para barras */
   --border: #1f1f1f;  /* para los bordes */
   --mg: #FF00FF;    /* magenta (no se si lo uso) */
+  --cel: #00fff7;  /* celeste neon */
+  --fond: rgba(0,0,0,0.75);
 }
 
 
@@ -1282,7 +1284,7 @@ footer {
 
 
 /* Fondo y centrado */
-#loginPage {
+.authPage {
   display: flex;                     
   justify-content: center;
   align-items: center;
@@ -1291,21 +1293,21 @@ footer {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  font-family: Arial, sans-serif;
+  font-family: 'Roboto Mono', monospace;
 }
 
 
-#loginPage .loginUsuario {
-  background-color: var(--border);
+.authBox {
+  background-color: rgba(20,20,20, 0.85);
   padding: 60px 40px 40px 40px;              
   border-radius: 15px;
   width: 600px;                              
   text-align: center;                         
-  position: relative;                        
-
+  position: relative;
+  box-shadow: 0 0 25px var(--cel), 0 0 50px var(--mg);                      
 }
 
-#loginPage .gifArriba {
+.authBox .gifArriba {
   position: absolute;
   top: -60px;           
   left: 50%;          
@@ -1314,56 +1316,87 @@ footer {
 }
 
 
-#loginPage h2 {
+.authBox h2 {
   margin: 20px 0;
   color: var(--primary);  
 }
 
 
-#loginPage input {
+.authBox input,
+.authBox select {
   width: 100%;
   padding: 12px;
-  margin: 10px 0;
+  margin: 12px 0;
   border-radius: 8px;
-  border: 1px solid #ccc;
+  border: 2px solid var(--mg);
   outline: none;
-  font-size: 16px;
-  color: #333;        
+  font-size: 16px;       
   background-color: #fff; 
   transition: 0.3s;
 }
 
 
-#loginPage input:focus {
-  border-color: var(--accent);
+.authBox input:focus,
+.authBox select:focus {
+  border-color: var(--cel);
+  box-shadow: 0 0 8px var(--cel);
 }
 
 
-#loginPage button {
+.authBox button {
   width: 100%;
   padding: 12px;
   margin-top: 10px;
-  border: none;
+  border: 2px solid var(--cel);
   border-radius: 8px;
-  background-color: var(--primary);
-  color: var(--text);
-  font-size: 16px;
+  background-color: transparent;
+  color: var(--cel);
+  font-size: 18px;
+  font-weight: bold;
   cursor: pointer;
+  text-shadow: 0 0 8px var(--cel);
   transition: 0.3s;
+  text-transform: uppercase;
 }
 
 
-#loginPage button:hover {
-  background-color: var(--accent);
+.authBox button:hover {
+  background-color: var(--cel);
+  color: #000;
+  box-shadow: 0 0 15px var(--cel), 0 0 30px var(--mg);
 }
 
 
-#loginPage a {
+.authBox a {
   color: var(--primary);
   text-decoration: none;
   font-weight: bold;
 }
 
-#loginPage a:hover {
+.authBox a:hover {
   text-decoration: underline;
 }
+
+/* Organizar los campos horizontalmente */
+.authBox .form-row {
+  display: flex;
+  gap: 20px; /* espacio entre columnas */
+  margin-bottom: 12px;
+}
+
+.authBox .form-row > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.authBox .form-row label {
+  margin-bottom: 4px;
+  text-align: left;
+}
+
+.authBox .form-row input,
+.authBox .form-row select {
+  width: 100%;
+}
+
