@@ -1377,10 +1377,10 @@ footer {
   text-decoration: underline;
 }
 
-/* Organizar los campos horizontalmente */
+
 .authBox .form-row {
   display: flex;
-  gap: 20px; /* espacio entre columnas */
+  gap: 20px; 
   margin-bottom: 12px;
 }
 
