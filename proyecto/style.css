@@ -1289,7 +1289,7 @@ footer {
   justify-content: center;
   align-items: center;
   height: 100vh;               
-  background-image: url('icons/paisaje.jpg');
+  background-image: url('icons/hollow.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1399,4 +1399,28 @@ footer {
 .authBox .form-row select {
   width: 100%;
 }
+
+/* Mensajes de validación */
+.authBox small {
+  display: block;
+  font-size: 13px;
+  margin-top: 4px;
+  color: var(--text);         
+         
+}
+
+.duoc {
+  color: #00ff99;           
+  font-weight: bold;
+  margin-top: 5px;          
+  font-size: 14px;
+  text-align: left;         
+}
+
+small.weak { color: #f00; }      
+small.medium { color: #ffa500; } 
+small.strong { color: #0f0; }   
+small.match { color: #0f0; }    
+small.nomatch { color: #f00; } 
+
 
