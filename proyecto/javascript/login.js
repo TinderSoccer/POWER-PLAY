@@ -45,13 +45,15 @@ formLogin.addEventListener('submit', function(e) {
   }
 
   
+  // Store logged in user info
+  localStorage.setItem('usuarioLogueado', JSON.stringify(usuario));
+  
   let mensaje = "Inicio de sesión exitoso!";
   if (usuario.descuento && usuario.descuento > 0) {
     mensaje += ` Tienes un descuento de por vida del ${usuario.descuento}%.`;
   }
 
   alert(mensaje);
-
 
   window.location.href = "index.html";
 });

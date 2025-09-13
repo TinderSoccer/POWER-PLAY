@@ -433,17 +433,220 @@ var productos = {
       'Dimensiones torre': '26cm altura',
       'Peso': '800g'
     }
+  },
+  'audifono-blackshark': {
+    nombre: 'AUDIFONO BLACKSHARK V2 X GREEN',
+    categoria: 'Accesorios',
+    imagen: 'imagenes/AUDIFONO-BLACKSHARK-V2-X-GREEN-removebg-preview.png',
+    precio: 89.999,
+    precioOriginal: 119.999,
+    descuento: 25,
+    descripcion: 'Audifono gaming profesional con microfono y sonido envolvente 7.1.',
+    caracteristicas: [
+      'Audio 7.1 surround',
+      'Microfono cardioide desmontable',
+      'Drivers de 50mm',
+      'Cable USB y 3.5mm',
+      'Almohadillas suaves',
+      'Compatible PC, PS4, Xbox, Switch'
+    ],
+    especificaciones: {
+      'Drivers': '50mm dinamicos',
+      'Respuesta frecuencia': '12Hz - 28kHz',
+      'Impedancia': '32 Ohm',
+      'Microfono': 'Cardioide desmontable',
+      'Conectividad': 'USB/3.5mm',
+      'Peso': '240g',
+      'Cable': '1.8m'
+    }
+  },
+  'control-dualsense': {
+    nombre: 'Control inalámbrico DualSense Chroma Indigo PS5',
+    categoria: 'Accesorios',
+    imagen: 'imagenes/Control-inalambrico-DualSense-Chroma-Indigo-PS5.png',
+    precio: 79.999,
+    precioOriginal: 89.999,
+    descuento: 11,
+    descripcion: 'Control oficial PS5 con retroalimentacion haptica y gatillos adaptativos.',
+    caracteristicas: [
+      'Retroalimentacion haptica',
+      'Gatillos adaptativos',
+      'Microfono integrado',
+      'Speaker incorporado',
+      'Touchpad central',
+      'Bateria recargable'
+    ],
+    especificaciones: {
+      'Conectividad': 'Bluetooth 5.1',
+      'Bateria': 'Li-ion recargable',
+      'Autonomia': '6-12 horas',
+      'Carga': 'USB-C',
+      'Audio': 'Jack 3.5mm',
+      'Peso': '280g',
+      'Dimensiones': '160x106x106mm'
+    }
+  },
+  'audifono-pulse': {
+    nombre: 'Audifono Pulse Elite Wireless Headset White PS5',
+    categoria: 'Accesorios',
+    imagen: 'imagenes/Audifono-Pulse-Elite-Wireless-Headset-White-PS5-removebg-preview.png',
+    precio: 199.999,
+    precioOriginal: 229.999,
+    descuento: 13,
+    descripcion: 'Audifonos premium PS5 con audio 3D y cancelacion de ruido.',
+    caracteristicas: [
+      'Audio 3D Tempest',
+      'Cancelacion activa de ruido',
+      'Inalambrico 2.4GHz',
+      'Microfono retractil',
+      'Bateria 30 horas',
+      'Carga rapida USB-C'
+    ],
+    especificaciones: {
+      'Conectividad': '2.4GHz inalambrico',
+      'Drivers': '40mm planares magneticos',
+      'Bateria': '30 horas',
+      'Carga': 'USB-C rapida',
+      'Microfono': 'Retractil bidireccional',
+      'Peso': '292g',
+      'Alcance': '12 metros'
+    }
+  },
+  'exploding-kittens': {
+    nombre: 'Exploding kittens el juego de tablero',
+    categoria: 'Juegos de Mesa',
+    imagen: 'imagenes/Exploding-kittens-juego-tablero.png',
+    precio: 32.999,
+    precioOriginal: 42.999,
+    descuento: 23,
+    descripcion: 'Juego de cartas estrategico lleno de gatitos explosivos y humor negro.',
+    caracteristicas: [
+      'Juego facil de aprender',
+      'Partidas de 15 minutos',
+      'Arte original divertido',
+      'Estrategia y suerte',
+      '2-5 jugadores',
+      'Para toda la familia'
+    ],
+    especificaciones: {
+      'Jugadores': '2-5 jugadores',
+      'Edad': '+7 años',
+      'Duracion': '15 minutos',
+      'Cartas': '56 cartas',
+      'Idioma': 'Español',
+      'Dimensiones': '10x7x3cm',
+      'Peso': '200g'
+    }
+  },
+  'wolfenstein-mesa': {
+    nombre: 'Juego de mesa Wolfenstein El juego de tablero',
+    categoria: 'Juegos de Mesa',
+    imagen: 'imagenes/juego-mesa-Wolfenstein-juego-tablero.png',
+    precio: 89.999,
+    precioOriginal: 109.999,
+    descuento: 18,
+    descripcion: 'Juego de mesa basado en el videojuego, con mision cooperativa contra nazis.',
+    caracteristicas: [
+      'Juego cooperativo',
+      'Basado en videojuego',
+      'Misiones epicas',
+      'Miniaturas detalladas',
+      '1-4 jugadores',
+      'Alta rejugabilidad'
+    ],
+    especificaciones: {
+      'Jugadores': '1-4 jugadores',
+      'Edad': '+14 años',
+      'Duracion': '60-120 minutos',
+      'Contenido': 'Tablero, miniaturas, cartas',
+      'Idioma': 'Español',
+      'Dimensiones caja': '30x30x8cm',
+      'Peso': '2.5kg'
+    }
+  },
+  'kienpake': {
+    nombre: 'Juegos de mesa - Kiénpaké',
+    categoria: 'Juegos de Mesa',
+    imagen: 'imagenes/Juegos-de-mesa-Kienpake.png',
+    precio: 24.999,
+    precioOriginal: 34.999,
+    descuento: 29,
+    descripcion: 'Juego chileno de preguntas y respuestas lleno de humor y cultura local.',
+    caracteristicas: [
+      'Preguntas cultura chilena',
+      'Humor nacional',
+      'Facil de jugar',
+      'Partidas divertidas',
+      '3-8 jugadores',
+      'Ideal para fiestas'
+    ],
+    especificaciones: {
+      'Jugadores': '3-8 jugadores',
+      'Edad': '+12 años',
+      'Duracion': '30-60 minutos',
+      'Cartas': '400 preguntas',
+      'Idioma': 'Español (Chile)',
+      'Dimensiones': '16x11x4cm',
+      'Peso': '350g'
+    }
+  },
+  '31-minutos': {
+    nombre: 'Juego 31 Minutos ¡No puedo parar!',
+    categoria: 'Juegos de Mesa',
+    imagen: 'imagenes/Juego-31-Minutos-No-puedo-parar.png',
+    precio: 39.999,
+    precioOriginal: 49.999,
+    descuento: 20,
+    descripcion: 'Juego oficial de 31 Minutos con personajes y canciones del programa.',
+    caracteristicas: [
+      'Personajes de 31 Minutos',
+      'Musica original',
+      'Preguntas del programa',
+      'Arte oficial',
+      '2-6 jugadores',
+      'Nostalgia garantizada'
+    ],
+    especificaciones: {
+      'Jugadores': '2-6 jugadores',
+      'Edad': '+6 años',
+      'Duracion': '45 minutos',
+      'Contenido': 'Tablero, cartas, fichas',
+      'Idioma': 'Español',
+      'Dimensiones': '27x27x6cm',
+      'Peso': '800g'
+    }
   }
 };
 
 // Guarda el producto que seleccionamos
 function setProductData(id, nombre, imagen, categoria) {
+  console.log('setProductData called with:', id, nombre, imagen, categoria);
   localStorage.setItem('selectedProduct', JSON.stringify({
     id: id,
     nombre: nombre,
     imagen: imagen,
     categoria: categoria
   }));
+}
+
+// Versión simplificada que solo toma el ID
+function selectProduct(id) {
+  console.log('selectProduct called with ID:', id);
+  if (productos[id]) {
+    const producto = productos[id];
+    localStorage.setItem('selectedProduct', JSON.stringify({
+      id: id,
+      nombre: producto.nombre,
+      imagen: producto.imagen,
+      categoria: producto.categoria
+    }));
+    console.log('Product data saved:', producto.nombre);
+    // Redirect to detail page
+    window.location.href = 'detalle-producto.html?id=' + id;
+  } else {
+    console.error('Product not found:', id);
+    alert('Producto no encontrado: ' + id);
+  }
 }
 
 // Cambia la cantidad del producto

@@ -40,8 +40,8 @@
 
       <!-- barra de busqueda -->
       <div class="search-bar">
-        <input type="text" placeholder="Buscar...">
-        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+        <input type="text" id="search-input" placeholder="Buscar productos...">
+        <button id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
       </div>
 
       <!-- acciones del usuario (favoritos, carrito, etc) -->
@@ -76,13 +76,10 @@
         <span></span>
       </button>
       <ul id="navbar-menu">
-        <li><a href="#">Juegos🎲</a></li>
-        <li><a href="#">Accesorios🎧</a></li>
-        <li><a href="#">Consolas🎮</a></li>
-        <li><a href="#">Computadores Gamers🖥️</a></li>
-        <li><a href="#">Sillas Gamers🪑</a></li>
-        <li><a href="#">Ropa Gamer👕</a></li>
-        <li><a href="#">Servicio Técnico</a></li>
+        <li><a href="#" id="show-all">Ver Todo</a></li>
+        <li><a href="#" data-category="juegos">Juegos🎲</a></li>
+        <li><a href="#" data-category="accesorios">Accesorios🎧</a></li>
+        <li><a href="#" data-category="consolas">Consolas🎮</a></li>
       </ul>
     </nav>
   </header>
@@ -90,8 +87,18 @@
   <!-- contenido principal -->
   <main class="container">
     <div class="layout">
-
   
+  <!-- search results container -->
+  <div id="search-results" class="search-results" style="display: none;">
+    <div class="search-header">
+      <h2>Resultados de búsqueda</h2>
+      <button id="clear-search" class="clear-search-btn">Ver todos los productos</button>
+    </div>
+    <div class="search-products-container">
+      <!-- Search results will be displayed here -->
+    </div>
+  </div>
+
   <!-- todo el contenido -->
   <div class="content-container">
   <!-- bienvenida -->
@@ -105,17 +112,17 @@
   <div class="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <a href="detalle-producto.html?id=kirby" onclick="setProductData('kirby', 'Kirby Star Allies', 'banner/banner kirby.png', 'Juegos')">
+        <a href="#" onclick="selectProduct('kirby'); return false;">
         <img src="banner/banner kirby.png" alt="Banner 1" class="banner-img">
         </a>
       </div>
       <div class="carousel-item">
-        <a href="detalle-producto.html?id=fifa26" onclick="setProductData('fifa26', 'FIFA 26 PS5', 'banner/FIFA26.png', 'Juegos')">
+        <a href="#" onclick="selectProduct('fifa26'); return false;">
         <img src="banner/FIFA26.png" alt="Banner 2" class="banner-img">
         </a>
       </div>
       <div class="carousel-item">
-        <a href="detalle-producto.html?id='hollowKnightSilksong" onclick="setProductData('hollowKnightSilksong', 'hollowKnightSilksong nintendo-switch-2', 'banner/ HOLLLOWKNIGTH', 'Juegos')">
+        <a href="#" onclick="selectProduct('hollowKnightSilksong'); return false;">
         <img src="banner/HOLLLOWKNIGTH.png" alt="Banner 3" class="banner-img">
         </a>
       </div>
@@ -132,7 +139,7 @@
   
 
   <!-- productos -->
-  <section class="productos">
+  <section class="productos" data-category="consolas">
     <h2>CONSOLAS <i class="fa-solid fa-gamepad"></i> </h2>
     <div class="divider"></div>
 
@@ -140,7 +147,7 @@
       
       <div class="productos-lista">
         <div class="producto">
-          <a href="detalle-producto.html?id=ps5" onclick="setProductData('ps5', 'Consola PlayStation 5 Slim', 'imagenes/ps5.png', 'Consolas')">
+          <a href="#" onclick="selectProduct('ps5'); return false;">
             <img src="imagenes/ps5.png" alt="PS5">
             <h3>Consola PlayStation 5 Slim</h3>
           </a>
@@ -151,7 +158,7 @@
         </div>
 
         <div class="producto">
-          <a href="detalle-producto.html?id=nintendo-oled" onclick="setProductData('nintendo-oled', 'Consola Nintendo Switch Modelo OLED Neon', 'imagenes/nintendo-oled.png', 'Consolas')">
+          <a href="#" onclick="selectProduct('nintendo-oled'); return false;">
             <img src="imagenes/nintendo-oled.png" alt="Nintendo Switch">
             <h3>Consola Nintendo Switch Modelo OLED Neon</h3>
           </a>
@@ -162,7 +169,7 @@
         </div>
 
         <div class="producto">
-          <a href="detalle-producto.html?id=nintendo-switch-2" onclick="setProductData('nintendo-switch-2', 'Nintendo Switch 2', 'imagenes/nintenso-switch-2.png', 'Consolas')">
+          <a href="#" onclick="selectProduct('nintendo-switch-2'); return false;">
             <img src="imagenes/nintenso-switch-2.png" alt="Nintendo Switch">
             <h3>Nintendo Switch 2</h3>
           </a>
@@ -173,7 +180,7 @@
         </div>
 
         <div class="producto">
-          <a href="detalle-producto.html?id=xbox-series-x" onclick="setProductData('xbox-series-x', 'Xbox Series X 1 TB Digital Blanca', 'imagenes/xbox.png', 'Consolas')">
+          <a href="#" onclick="selectProduct('xbox-series-x'); return false;">
             <img src="imagenes/xbox.png" alt="Xbox">
             <h3>Xbox Series X 1 TB Digital Blanca</h3>
           </a>
@@ -184,7 +191,7 @@
         </div>
 
         <div class="producto">
-          <a href="detalle-producto.html?id=steam-deck" onclick="setProductData('steam-deck', 'Steam Deck 512GB OLED', 'imagenes/steam-deck-512gb-oled.png', 'Consolas')">
+          <a href="#" onclick="selectProduct('steam-deck'); return false;">
             <img src="imagenes/steam-deck-512gb-oled.png" alt="Steam Deck">
             <h3>Steam Deck 512GB OLED</h3>
           </a>
@@ -195,7 +202,7 @@
         </div>
 
         <div class="producto">
-          <a href="detalle-producto.html?id=ps5-pro" onclick="setProductData('ps5-pro', 'PlayStation 5 Pro', 'imagenes/playstation-5-pro.png', 'Consolas')">
+          <a href="#" onclick="selectProduct('ps5-pro'); return false;">
             <img src="imagenes/playstation-5-pro.png" alt="PS5 Pro">
             <h3>PlayStation 5 Pro</h3>
           </a>
@@ -206,7 +213,7 @@
         </div>
 
         <div class="producto">
-          <a href="detalle-producto.html?id=xbox-series-s" onclick="setProductData('xbox-series-s', 'Xbox Series S Digital Edition', 'imagenes/xbox-series-s-digital.png', 'Consolas')">
+          <a href="#" onclick="selectProduct('xbox-series-s'); return false;">
             <img src="imagenes/xbox-series-s-digital.png" alt="Xbox Series S">
             <h3>Xbox Series S Digital Edition</h3>
           </a>
@@ -220,7 +227,7 @@
     </div>
   </section>
 
-  <section class="productos">
+  <section class="productos" data-category="accesorios">
   <h2>ACCESORIOS <i class="fas fa-headphones"></i></h2>
   <div class="divider"></div>
 
@@ -228,7 +235,7 @@
 
     <div class="productos-lista">
       <div class="producto">
-        <a href="detalle-producto.html?id=memoria-ssd" onclick="setProductData('memoria-ssd', 'Memoria ssd M2 PS5/PC 1TB con disipador', 'imagenes/Memoria-ssd-removebg-preview.png', 'Accesorios')">
+        <a href="#" onclick="selectProduct('memoria-ssd'); return false;">
           <img src="imagenes/Memoria-ssd-removebg-preview.png" alt="Headset Gamer">
           <h3>Memoria ssd M2 PS5/PC 1TB con disipador</h3>
         </a>
@@ -239,7 +246,7 @@
       </div>
 
       <div class="producto">
-        <a href="detalle-producto.html?id=audifono-blackshark" onclick="setProductData('audifono-blackshark', 'AUDIFONO BLACKSHARK V2 X GREEN', 'imagenes/AUDIFONO-BLACKSHARK-V2-X-GREEN-removebg-preview.png', 'Accesorios')">
+        <a href="#" onclick="selectProduct('audifono-blackshark'); return false;">
           <img src="imagenes/AUDIFONO-BLACKSHARK-V2-X-GREEN-removebg-preview.png" alt="Mouse Gamer">
           <h3>AUDIFONO BLACKSHARK V2 X GREEN</h3>
         </a>
@@ -250,7 +257,7 @@
       </div>
 
       <div class="producto">
-        <a href="detalle-producto.html?id=control-dualsense" onclick="setProductData('control-dualsense', 'Control inalámbrico DualSense Chroma Indigo PS5', 'imagenes/Control-inalambrico-DualSense-Chroma-Indigo-PS5.png', 'Accesorios')">
+        <a href="#" onclick="selectProduct('control-dualsense'); return false;">
           <img src="imagenes/Control-inalambrico-DualSense-Chroma-Indigo-PS5.png" alt="Teclado Gamer">
           <h3>Control inalámbrico DualSense Chroma Indigo PS5</h3>
         </a>
@@ -261,7 +268,7 @@
       </div>
 
       <div class="producto">
-        <a href="detalle-producto.html?id=audifono-pulse" onclick="setProductData('audifono-pulse', 'Audifono Pulse Elite Wireless Headset White PS5', 'imagenes/Audifono-Pulse-Elite-Wireless-Headset-White-PS5-removebg-preview.png', 'Accesorios')">
+        <a href="#" onclick="selectProduct('audifono-pulse'); return false;">
           <img src="imagenes/Audifono-Pulse-Elite-Wireless-Headset-White-PS5-removebg-preview.png" alt="Teclado Gamer">
           <h3>Audifono Pulse Elite Wireless Headset White PS5</h3>
         </a>
@@ -272,7 +279,7 @@
       </div>
 
       <div class="producto">
-        <a href="detalle-producto.html?id=teclado-mecanico" onclick="setProductData('teclado-mecanico', 'Teclado Mecánico RGB Gaming K70', 'imagenes/teclado-mecanico-rgb-k70.png', 'Accesorios')">
+        <a href="#" onclick="selectProduct('teclado-mecanico'); return false;">
           <img src="imagenes/teclado-mecanico-rgb-k70.png" alt="Teclado Gaming">
           <h3>Teclado Mecánico RGB Gaming K70</h3>
         </a>
@@ -283,7 +290,7 @@
       </div>
 
       <div class="producto">
-        <a href="detalle-producto.html?id=mouse-gaming" onclick="setProductData('mouse-gaming', 'Mouse Gaming Logitech G502 Hero', 'imagenes/mouse-gaming-logitech-g502.png', 'Accesorios')">
+        <a href="#" onclick="selectProduct('mouse-gaming'); return false;">
           <img src="imagenes/mouse-gaming-logitech-g502.png" alt="Mouse Gaming">
           <h3>Mouse Gaming Logitech G502 Hero</h3>
         </a>
@@ -294,7 +301,7 @@
       </div>
 
       <div class="producto">
-        <a href="detalle-producto.html?id=webcam-gaming" onclick="setProductData('webcam-gaming', 'Webcam 4K Gaming Streamer Pro', 'imagenes/webcam-4k-gaming-streamer.png', 'Accesorios')">
+        <a href="#" onclick="selectProduct('webcam-gaming'); return false;">
           <img src="imagenes/webcam-4k-gaming-streamer.png" alt="Webcam Gaming">
           <h3>Webcam 4K Gaming Streamer Pro</h3>
         </a>
@@ -307,7 +314,7 @@
   </div>
 </section>
 
-  <section class="productos">
+  <section class="productos" data-category="juegos">
   <h2>JUEGOS DE MESA <i class="fa-regular fa-chess-knight"></i></h2>
   <div class="divider"></div>
 
@@ -315,7 +322,7 @@
 
     <div class="productos-lista">
       <div class="producto">
-        <a href="detalle-producto.html?id=exploding-kittens" onclick="setProductData('exploding-kittens', 'Exploding kittens el juego de tablero', 'imagenes/Exploding-kittens-juego-tablero.png', 'Juegos de Mesa')">
+        <a href="#" onclick="selectProduct('exploding-kittens'); return false;">
           <img src="imagenes/Exploding-kittens-juego-tablero.png" alt="Headset Gamer">
           <h3>Exploding kittens el juego de tablero</h3>
         </a>
@@ -326,7 +333,7 @@
       </div>
 
       <div class="producto">
-        <a href="detalle-producto.html?id=wolfenstein-mesa" onclick="setProductData('wolfenstein-mesa', 'Juego de mesa Wolfenstein El juego de tablero', 'imagenes/juego-mesa-Wolfenstein-juego-tablero.png', 'Juegos de Mesa')">
+        <a href="#" onclick="selectProduct('wolfenstein-mesa'); return false;">
           <img src="imagenes/juego-mesa-Wolfenstein-juego-tablero.png" alt="Mouse Gamer">
           <h3>Juego de mesa Wolfenstein El juego de tablero</h3>
         </a>
@@ -337,7 +344,7 @@
       </div>
 
       <div class="producto">
-        <a href="detalle-producto.html?id=kienpake" onclick="setProductData('kienpake', 'Juegos de mesa - Kiénpaké', 'imagenes/Juegos-de-mesa-Kienpake.png', 'Juegos de Mesa')">
+        <a href="#" onclick="selectProduct('kienpake'); return false;">
           <img src="imagenes/Juegos-de-mesa-Kienpake.png" alt="Teclado Gamer">
           <h3>Juegos de mesa - Kiénpaké</h3>
         </a>
@@ -349,7 +356,7 @@
       
 
       <div class="producto">
-        <a href="detalle-producto.html?id=31-minutos" onclick="setProductData('31-minutos', 'Juego 31 Minutos ¡No puedo parar!', 'imagenes/Juego-31-Minutos-No-puedo-parar.png', 'Juegos de Mesa')">
+        <a href="#" onclick="selectProduct('31-minutos'); return false;">
           <img src="imagenes/Juego-31-Minutos-No-puedo-parar.png" alt="Teclado Gamer">
           <h3>Juego 31 Minutos ¡No puedo parar!</h3>
         </a>
@@ -360,7 +367,7 @@
       </div>
 
       <div class="producto">
-        <a href="detalle-producto.html?id=monopoly-gamer" onclick="setProductData('monopoly-gamer', 'Monopoly Gamer Edition Mario Bros', 'imagenes/monopoly-gamer-mario-bros.png', 'Juegos de Mesa')">
+        <a href="#" onclick="selectProduct('monopoly-gamer'); return false;">
           <img src="imagenes/monopoly-gamer-mario-bros.png" alt="Monopoly Gamer">
           <h3>Monopoly Gamer Edition Mario Bros</h3>
         </a>
@@ -371,7 +378,7 @@
       </div>
 
       <div class="producto">
-        <a href="detalle-producto.html?id=uno-flip" onclick="setProductData('uno-flip', 'UNO Flip! Juego de Cartas', 'imagenes/uno-flip-juego-cartas.png', 'Juegos de Mesa')">
+        <a href="#" onclick="selectProduct('uno-flip'); return false;">
           <img src="imagenes/uno-flip-juego-cartas.png" alt="UNO Flip">
           <h3>UNO Flip! Juego de Cartas</h3>
         </a>
@@ -382,7 +389,7 @@
       </div>
 
       <div class="producto">
-        <a href="detalle-producto.html?id=jenga-classic" onclick="setProductData('jenga-classic', 'Jenga Classic Torre de Madera', 'imagenes/jenga-classic-torre-madera.png', 'Juegos de Mesa')">
+        <a href="#" onclick="selectProduct('jenga-classic'); return false;">
           <img src="imagenes/jenga-classic-torre-madera.png" alt="Jenga Classic">
           <h3>Jenga Classic Torre de Madera</h3>
         </a>
@@ -459,10 +466,14 @@
   </div>
 </footer>
 
+<script src="javascript/producto-detalle.js"></script>
 <script src="javascript/registro.js"></script>
 <script src="javascript/carrusel.js"></script>
 <script src="javascript/banner.js"></script>
 <script src="javascript/carrito.js"></script>
 <script src="javascript/mobile-menu.js"></script>
+<script src="javascript/categories.js"></script>
+<script src="javascript/auth.js"></script>
+<script src="javascript/search.js"></script>
 </body>
 </html>

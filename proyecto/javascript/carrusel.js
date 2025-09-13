@@ -1,13 +1,3 @@
-// Guarda los datos del producto seleccionado
-function setProductData(id, nombre, imagen, categoria) {
-  localStorage.setItem('selectedProduct', JSON.stringify({
-    id: id,
-    nombre: nombre,
-    imagen: imagen,
-    categoria: categoria
-  }));
-}
-
 document.addEventListener('DOMContentLoaded', function() {
   var containers = document.querySelectorAll('.productos-container');
   

@@ -191,6 +191,138 @@ a {
   object-fit: contain;
 }
 
+/* User dropdown styles */
+.user-dropdown {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: var(--text-2);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.user-dropdown:hover {
+  color: var(--text);
+}
+
+.user-dropdown:hover .icon-circle {
+  border-color: var(--accent);
+  background: rgba(57,255,20,0.2);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: var(--muted);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 0;
+  z-index: 1000;
+  min-width: 120px;
+  margin-top: 5px;
+}
+
+.user-dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a {
+  color: var(--text-2);
+  padding: 8px 15px;
+  text-decoration: none;
+  display: block;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.dropdown-content a:hover {
+  background: var(--primary);
+  color: var(--text);
+}
+
+/* Search Results Styles */
+.search-results {
+  margin-bottom: 30px;
+}
+
+.search-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--border);
+}
+
+.search-header h2 {
+  color: var(--text);
+  font-family: 'Orbitron', monospace;
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.clear-search-btn {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.clear-search-btn:hover {
+  background: var(--accent);
+  color: var(--bg);
+  transform: translateY(-2px);
+}
+
+.search-info {
+  margin-bottom: 20px;
+}
+
+.search-info p {
+  color: var(--text-2);
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.no-results {
+  text-align: center;
+  padding: 60px 20px;
+  background: var(--muted);
+  border-radius: 15px;
+  border: 2px solid var(--border);
+}
+
+.no-results h3 {
+  color: var(--text);
+  font-family: 'Orbitron', monospace;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.no-results p {
+  color: var(--text-2);
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+/* Search products container uses the same styles as regular productos */
+.search-products-container .productos-lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
 /* LAYOUT: CONTENT */
 .layout {
   padding: 20px 6vw;
