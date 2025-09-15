@@ -229,7 +229,7 @@ var productos = {
   'ps5-pro': {
     nombre: 'PlayStation 5 Pro',
     categoria: 'Consolas',
-    imagen: 'imagenes/playstation-5-pro.png',
+    imagen: 'imagenes/ps5 pro.png',
     precio: 799.999,
     precioOriginal: 899.999,
     descuento: 11,
@@ -255,7 +255,7 @@ var productos = {
   'xbox-series-s': {
     nombre: 'Xbox Series S Digital Edition',
     categoria: 'Consolas',
-    imagen: 'imagenes/xbox-series-s-digital.png',
+    imagen: 'imagenes/xbox-serie-s.png',
     precio: 299.999,
     precioOriginal: 349.999,
     descuento: 14,
@@ -281,7 +281,7 @@ var productos = {
   'teclado-mecanico': {
     nombre: 'Teclado Mecánico RGB Gaming K70',
     categoria: 'Accesorios',
-    imagen: 'imagenes/teclado-mecanico-rgb-k70.png',
+    imagen: 'imagenes/tecladok70.png',
     precio: 129.999,
     precioOriginal: 159.999,
     descuento: 19,
@@ -307,7 +307,7 @@ var productos = {
   'mouse-gaming': {
     nombre: 'Mouse Gaming Logitech G502 Hero',
     categoria: 'Accesorios',
-    imagen: 'imagenes/mouse-gaming-logitech-g502.png',
+    imagen: 'imagenes/mause.png',
     precio: 89.999,
     precioOriginal: 119.999,
     descuento: 25,
@@ -333,7 +333,7 @@ var productos = {
   'webcam-gaming': {
     nombre: 'Webcam 4K Gaming Streamer Pro',
     categoria: 'Accesorios',
-    imagen: 'imagenes/webcam-4k-gaming-streamer.png',
+    imagen: 'imagenes/web-cam.png',
     precio: 199.999,
     precioOriginal: 249.999,
     descuento: 20,
@@ -359,7 +359,7 @@ var productos = {
   'monopoly-gamer': {
     nombre: 'Monopoly Gamer Edition Mario Bros',
     categoria: 'Juegos de Mesa',
-    imagen: 'imagenes/monopoly-gamer-mario-bros.png',
+    imagen: 'imagenes/monopoli-mario.png',
     precio: 45.999,
     precioOriginal: 59.999,
     descuento: 23,
@@ -385,7 +385,7 @@ var productos = {
   'uno-flip': {
     nombre: 'UNO Flip! Juego de Cartas',
     categoria: 'Juegos de Mesa',
-    imagen: 'imagenes/uno-flip-juego-cartas.png',
+    imagen: 'imagenes/uno-flip.png',
     precio: 19.999,
     precioOriginal: 24.999,
     descuento: 20,
@@ -411,7 +411,7 @@ var productos = {
   'jenga-classic': {
     nombre: 'Jenga Classic Torre de Madera',
     categoria: 'Juegos de Mesa',
-    imagen: 'imagenes/jenga-classic-torre-madera.png',
+    imagen: 'imagenes/jenga.png',
     precio: 29.999,
     precioOriginal: 39.999,
     descuento: 25,

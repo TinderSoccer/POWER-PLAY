@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Detalles del Producto - Level-Up Gamer</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -12,27 +13,28 @@
 
   <!-- redes sociales -->
   <div class="top-bar thin">
-  <div class="social">
-    <span>Síguenos en redes sociales</span>
-    <a href="#"><i class="fab fa-facebook-f"></i></a>
-    <a href="#"><i class="fab fa-twitter"></i></a>
-    <a href="#"><i class="fab fa-instagram"></i></a>
-  </div>
+    <div class="social">
+      <span>Síguenos en redes sociales</span>
+      <!-- links a las redes (por ahora solo van a las paginas principales) -->
+      <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+    </div>
 
   <div class="user-links">
-    <a href="#">Nuestras tiendas</a>     
-    <a href="#">Regístrate</a>     
-    <a href="#">Mi cuenta</a>
+      <a href="">Nuestras tiendas</a>     
+      <a href="registro.html">Regístrate</a>     
+      <a href="login.html">Mi cuenta</a>
+    </div>
   </div>
-</div>
 
   <!-- Barra superior -->
   <header>
     <div class="top-bar">
       <div class="logo">
         <a href="index.html" class="logo">
-        <i class="fa-solid fa-gamepad"></i>
-        <h1>Power Play</h1>
+           <img src="icons/zenitsu.gif" alt="gif arcade" class="logo-gif">
+          <h1 style="font-family: 'Press Start 2P', cursive;">Power Play</h1>
         </a>
       </div>
 
@@ -50,13 +52,14 @@
           </div>
           <span>Mis Favoritos</span>
         </a>
-        <a href="#" class="action">
+        <a href="#" class="action" onclick="verCarrito()">
           <div class="icon-circle">
             <img src="icons/carrito.png" alt="Carrito" class="icon">
+            <span id="cart-count" class="cart-count">0</span>
           </div>
           <span>Carrito</span>
         </a>
-        <a href="#" class="action">
+        <a href="login.html" class="action">
           <div class="icon-circle">
             <img src="icons/usuario.png" alt="Usuario" class="icon">
           </div>
@@ -181,9 +184,65 @@
   </main>
 
   <!-- pie de pagina -->
-  <footer>
-    <p>© 2025 Level-Up Gamer | Síguenos en redes sociales</p>
-  </footer>
+  <footer class="footer">
+  <div class="footer-container">
+
+    <!-- Columna 1: Logos + GIF -->
+    <div class="footer-logo">
+      <div class="social-icons">
+        <a href="https://www.facebook.com/" target="_blank">
+          <img src="icons/facebook.png" alt="Facebook">
+        </a>
+        <a href="https://www.instagram.com/" target="_blank">
+          <img src="icons/instagram.png" alt="Instagram">
+        </a>
+        <a href="https://twitter.com/" target="_blank">
+          <img src="icons/Twitter.png" alt="X/Twitter">
+        </a>
+      </div>
+      <img src="icons/homero.gif" alt="GIF Mario saltando" class="gif">
+    </div>
+
+    <!-- Columna 2: Corporativo -->
+    <div class="footer-column">
+      <h4>Corporativo</h4>
+      <ul>
+        <li><a href="#">Nuestras Tiendas</a></li>
+        <li><a href="#">Preguntas Frecuentes</a></li>
+        <li><a href="#">Política de Devoluciones</a></li>
+        <li><a href="#">Acerca de Nosotros</a></li>
+      </ul>
+    </div>
+
+    <!-- Columna 3: Horario / Contacto -->
+    <div class="footer-column">
+      <h4>HORARIO DE ATENCIÓN</h4>
+      <p>Lunes a Viernes<br>08:00 AM - 17:30</p>
+      <p>Email: <a href="mailto:servicio@Power-up.cl">servicio@Power-up.cl</a></p>
+
+      <h4>CONTACTO</h4>
+      <p>Contáctenos a través de redes sociales<br>
+      o al mail <a href="mailto:servicioalcliente@Power-up.cl">servicioalcliente@Power-up.cl</a></p>
+    </div>
+
+    <!-- Columna 4: Mi Cuenta -->
+    <div class="footer-column">
+      <h4>Mi Cuenta</h4>
+      <ul>
+        <li><a href="#">Historial de pedidos</a></li>
+        <li><a href="#">Favoritos</a></li>
+        <li><a href="login.html">Mi cuenta</a></li>
+      </ul>
+    </div>
+
+    <!-- Columna 5: Métodos de pago -->
+    <div class="footer-column">
+      <h4>Métodos de Pago</h4>
+      <img src="icons/pago.jpg" alt="Métodos de pago" style="width:100%; max-width:180px;">
+    </div>
+
+  </div>
+</footer>
   
   <script src="javascript/producto-detalle.js"></script>
 </body>

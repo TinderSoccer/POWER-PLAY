@@ -10,6 +10,7 @@
   --mg: #FF00FF;    /* magenta (no se si lo uso) */
   --cel: #00fff7;  /* celeste neon */
   --fond: rgba(0,0,0,0.75);
+  --azul: blue;
 }
 
 
@@ -73,9 +74,10 @@ body {
   line-height: 1.5;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;   /* que ocupe toda la pantalla */
+  min-height: 100vh;   
   margin: 0;
 }
+
 
 /* el contenedor principal */
 main.container {
@@ -106,15 +108,30 @@ a {
   align-items: center;
   gap: 8px;
 }
-.logo i {
+.logo {
   font-size: 1.6rem;
   color: var(--accent);
 }
+
+.logo-gif {
+  width: 100px; /* tamaño del GIF */
+  height: 100px;
+}
+
 .logo h1 {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 1.4rem;
-  color: var(--primary);
-  text-transform: uppercase;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 30px;
+  text-align: center;
+  animation: colorCycle 5s infinite alternate;
+  text-shadow: 2px 2px #000; /* sombra negra para resaltar colores */
+}
+
+@keyframes colorCycle {
+  0%   { color: #FFFF00; } 
+  25%  { color: var(--primary); } 
+  50%  { color: var(--mg); } 
+  70%  { color: var(--accent);}
+  100% { color: #FFFF00; } 
 }
 
 /* Buscador */
@@ -329,8 +346,6 @@ a {
 }
 
 
-
-
 /* Contenedor general (centra todo y los hace del mismo ancho) */
 .content-container {
   width: 100%;
@@ -340,6 +355,7 @@ a {
 
 /* Hero (bienvenida) */
 .hero {
+  
   background: linear-gradient(to right, rgba(30,144,255,.2), rgba(57,255,20,.1));
   text-align: center;
   padding: 40px;
@@ -1554,5 +1570,19 @@ small.medium { color: #ffa500; }
 small.strong { color: #0f0; }   
 small.match { color: #0f0; }    
 small.nomatch { color: #f00; } 
+
+
+.top-bar.derechos {
+  background: var(--azul);  
+  color: white;
+  font-size: 13px;
+  display: inline-block; /* para que padding funcione correctamente */
+  padding-left: 400px;  
+}
+
+
+
+
+
 
 
