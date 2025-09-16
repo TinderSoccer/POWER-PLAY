@@ -11,7 +11,10 @@
   --cel: #00fff7;  /* celeste neon */
   --fond: rgba(0,0,0,0.75);
   --azul: blue;
+  --card-bg: #0f0f0f;
 }
+
+
 
 
 /* la barra de arriba con las redes sociales */
@@ -1581,7 +1584,195 @@ small.nomatch { color: #f00; }
 }
 
 
+/* Layout principal: sidebar + main (horizontal) */
+.profile-layout {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 30px;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  padding: 30px;
+  box-sizing: border-box;
+  align-items: start;
+}
 
+/* SIDEBAR */
+.profile-sidebar {
+  position: sticky;
+  top: 80px; /* altura para que no tape el header */
+  padding: 20px;
+  width: 220px;
+  min-height: calc(100vh - 80px);
+
+}
+
+.profile-sidebar .mini-logo {
+  display: inline-block;
+  color: var(--primary);
+  font-family: 'Press Start 2P', cursive;
+  text-decoration: none;
+  margin-bottom: 20px;
+}
+
+.profile-sidebar nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0 0;
+}
+
+.profile-sidebar nav li {
+  margin: 8px 0;
+}
+
+.profile-sidebar nav a {
+  display: block;
+  padding: 10px 12px;
+  color: var(--text);
+  text-decoration: none;
+  border-radius: 6px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  transition: background .15s, color .15s;
+}
+
+.profile-sidebar nav a:hover,
+.profile-sidebar nav a.active {
+  background: rgba(30,144,255,0.08);
+  color: var(--accent);
+}
+
+/* MAIN */
+.profile-main {
+  padding: 0;
+}
+
+/* Header con avatar centrado dentro del main */
+.profile-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 22px;
+  text-align: center;
+}
+
+.avatar-wrap {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 5px solid var(--accent);
+  box-shadow: 0 6px 22px rgba(30,144,255,0.12), 0 0 30px rgba(57,255,20,0.04);
+  background: linear-gradient(135deg, rgba(30,144,255,0.06), rgba(57,255,20,0.03));
+}
+
+.avatar-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.avatar-change {
+  position: absolute;
+  bottom: -10px;
+  right: -10px;
+  background: var(--accent);
+  border: none;
+  color: #000;
+  padding: 8px 10px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 14px;
+  transform: translate(10%, 10%);
+  box-shadow: 0 6px 18px rgba(30,144,255,0.18);
+}
+
+/* Título "Mi Cuenta" debajo del avatar */
+.profile-title {
+  margin: 12px 0 0;
+  font-family: 'Orbitron', sans-serif;
+  color: var(--primary);
+  font-size: 1.6rem;
+  letter-spacing: .5px;
+}
+
+.profile-subtitle {
+  margin: 6px 0 12px;
+  color: var(--primary);
+  opacity: .8;
+  font-size: .95rem;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* GRID de cards (2 columnas) */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* Card */
+.card {
+  background: var(--card-bg);
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+  border: 1px solid rgba(255,255,255,0.02);
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-head h2 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+  font-family: 'Orbitron', sans-serif;
+  color: var(--primary);
+  letter-spacing: .6px;
+}
+
+.card-body p {
+  color: var(--text);
+  opacity: .9;
+  margin: 6px 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: .95rem;
+}
+
+.card-actions {
+  margin-top: 12px;
+}
+
+.btn {
+  background: var(--accent);
+  color: #000;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  box-shadow: 0 6px 18px rgba(30,144,255,0.12);
+  transition: transform .12s ease, background .12s;
+}
+
+.btn.secondary {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.btn:hover { transform: translateY(-3px); }
+
+/* responsive: en pantallas pequeñas apilamos */
+@media (max-width: 980px) {
+  .profile-layout { grid-template-columns: 1fr; padding: 20px; }
+  .profile-sidebar { order: 2; display: flex; justify-content: center; margin-top: 18px; }
+  .cards-grid { grid-template-columns: 1fr; }
+  .avatar-change { transform: translate(0,0); bottom: 6px; right: 6px; }
+}
 
 
 

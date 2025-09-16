@@ -44,6 +44,9 @@ formLogin.addEventListener('submit', function(e) {
     msgPassword.textContent = "";
   }
 
+  if(!usuario.avatar) {
+    usuario.avatar = "icons/avatar.png"; // imagen por defecto
+  }
   
   // Store logged in user info
   localStorage.setItem('usuarioLogueado', JSON.stringify(usuario));
@@ -55,5 +58,5 @@ formLogin.addEventListener('submit', function(e) {
 
   alert(mensaje);
 
-  window.location.href = "index.html";
+  window.location.href = "perfil.html";
 });

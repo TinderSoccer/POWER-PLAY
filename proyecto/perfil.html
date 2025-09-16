@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Perfil - Power Play</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css"> 
+  <link rel="stylesheet" href="perfil.css"> 
+</head>
+<body>
+
+
+  <div class="top-bar thin">
+    <div class="social">
+      <span>Síguenos en redes sociales</span>
+      <!-- links a las redes (por ahora solo van a las paginas principales) -->
+      <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+    </div>
+
+    <div class="user-links">
+      <a href="">Nuestras tiendas</a>     
+      <a href="registro.html">Regístrate</a>     
+      <a href="login.html">Mi cuenta</a>
+    </div>
+  </div>
+
+
+  <header>
+    <div class="top-bar">
+      <div class="logo">
+        <a href="index.html" class="logo">
+           <img src="icons/zenitsu.gif" alt="gif arcade" class="logo-gif">
+          <h1>Power Play</h1>
+        </a>
+      </div>
+
+      <div class="search-bar">
+        <input type="text" id="search-input" placeholder="Buscar productos...">
+        <button id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
+
+
+      <div class="user-actions">
+        <a href="#" class="action">
+          <div class="icon-circle">
+            <img src="icons/favoritos.png" alt="Favoritos" class="icon">
+          </div>
+          <span>Mis Favoritos</span>
+        </a>
+        <a href="#" class="action" onclick="verCarrito()">
+          <div class="icon-circle">
+            <img src="icons/carrito.png" alt="Carrito" class="icon">
+            <span id="cart-count" class="cart-count">0</span>
+          </div>
+          <span>Carrito</span>
+        </a>
+        <a href="login.html" class="action">
+          <div class="icon-circle">
+            <img src="icons/usuario.png" alt="Usuario" class="icon">
+          </div>
+          <span>Iniciar Sesión</span>
+        </a>
+      </div>
+    </div>
+
+
+    <nav class="navbar">
+      <button class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul id="navbar-menu">
+        <li><a href="#" id="show-all">Ver Todo</a></li>
+        <li><a href="#" data-category="juegos">Juegos🎲</a></li>
+        <li><a href="#" data-category="accesorios">Accesorios🎧</a></li>
+        <li><a href="#" data-category="consolas">Consolas🎮</a></li>
+      </ul>
+    </nav>
+  </header>
+
+   <main class="profile-layout">
+
+    <!-- SIDEBAR (links cortos) -->
+    <aside class="profile-sidebar" aria-label="Navegación de cuenta">
+      <div class="sidebar-top">
+        <!-- (opcional) logo pequeño -->
+        <a href="index.html" class="mini-logo">Power Play</a>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="#" class="active">Mi Cuenta</a></li>
+          <li><a href="#">Mis pedidos</a></li>
+          <li><a href="#">Mi lista de deseos</a></li>
+          <li><a href="#">Información de la cuenta</a></li>
+          <li><a href="#" id="logout-btn">Cerrar sesión</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- MAIN (avatar arriba, título debajo, cards horizontales) -->
+    <section class="profile-main">
+      <!-- Avatar + Título -->
+      <div class="profile-header">
+        <div class="avatar-wrap">
+          <img id="profile-avatar" src="icons/avatar.png" alt="Avatar" />
+          <input id="avatar-input" type="file" accept="image/*" style="display:none" />
+          <button id="avatar-change" class="avatar-change" type="button" title="Cambiar avatar"></button>
+        </div>
+
+        <h1 class="profile-title">Mi Cuenta</h1>
+      </div>
+
+      <!-- GRID DE CARDS: dos columnas en escritorio -->
+      <div class="cards-grid">
+
+        <!-- Card: Información de la cuenta -->
+        <article class="card">
+          <div class="card-head">
+            <h2>Información del contacto</h2>
+          </div>
+          <div class="card-body">
+            <p><strong>Nombre:</strong> <span id="user-name">Cristian Velasquez</span></p>
+            <p><strong>Email:</strong> <span id="user-email">cristian102711@gmail.com</span></p>
+            <div class="card-actions">
+              <button class="btn">Editar</button>
+              <button class="btn secondary">Cambiar contraseña</button>
+            </div>
+          </div>
+        </article>
+
+
+        <!-- Card: Dirección de envío -->
+        <article class="card">
+          <div class="card-head">
+            <h2>Dirección de envío predeterminada</h2>
+          </div>
+          <div class="card-body">
+            <p id="shipping-address">No ha establecido una dirección de envío predeterminada.</p>
+            <div class="card-actions">
+              <button class="btn">Editar dirección</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card: Mis pedidos -->
+        <article class="card">
+          <div class="card-head">
+            <h2>Mis pedidos</h2>
+          </div>
+          <div class="card-body">
+            <p>No tienes pedidos aún.</p>
+            <div class="card-actions">
+              <button class="btn">Ver historial</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card: Lista de deseos -->
+        <article class="card">
+          <div class="card-head">
+            <h2>Mi lista de deseos</h2>
+          </div>
+          <div class="card-body">
+            <p>No hay elementos en tu lista de deseos.</p>
+            <div class="card-actions">
+              <button class="btn">Ver favoritos</button>
+            </div>
+          </div>
+        </article>
+
+      </div> 
+    </section>
+  </main>
+
+  
+
+  <!-- Footer -->
+   <footer class="footer">
+  <div class="footer-container">
+
+    <div class="footer-logo">
+      <div class="social-icons">
+        <a href="https://www.facebook.com/" target="_blank">
+          <img src="icons/facebook.png" alt="Facebook">
+        </a>
+        <a href="https://www.instagram.com/" target="_blank">
+          <img src="icons/instagram.png" alt="Instagram">
+        </a>
+        <a href="https://twitter.com/" target="_blank">
+          <img src="icons/Twitter.png" alt="X/Twitter">
+        </a>
+      </div>
+      <img src="icons/homero.gif" alt="GIF Mario saltando" class="gif">
+    </div>
+
+    <div class="footer-column">
+      <h4>Corporativo</h4>
+      <ul>
+        <li><a href="#">Nuestras Tiendas</a></li>
+        <li><a href="#">Preguntas Frecuentes</a></li>
+        <li><a href="#">Política de Devoluciones</a></li>
+        <li><a href="#">Acerca de Nosotros</a></li>
+      </ul>
+    </div>
+
+
+    <div class="footer-column">
+      <h4>HORARIO DE ATENCIÓN</h4>
+      <p>Lunes a Viernes<br>08:00 AM - 17:30</p>
+      <p>Email: <a href="mailto:servicio@Power-up.cl">servicio@Power-up.cl</a></p>
+
+      <h4>CONTACTO</h4>
+      <p>Contáctenos a través de redes sociales<br>
+      o al mail <a href="mailto:servicioalcliente@Power-up.cl">servicioalcliente@Power-up.cl</a></p>
+    </div>
+
+
+    <div class="footer-column">
+      <h4>Mi Cuenta</h4>
+      <ul>
+        <li><a href="#">Historial de pedidos</a></li>
+        <li><a href="#">Favoritos</a></li>
+        <li><a href="login.html">Mi cuenta</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h4>Métodos de Pago</h4>
+      <img src="icons/pago.jpg" alt="Métodos de pago" style="width:100%; max-width:180px;">
+    </div>
+
+  </div>
+</footer>
+
+<div class="top-bar derechos">
+    <div class="social">
+      <span>POWER PLAY, Todos los derechos reservados</span>
+    </div>
+
+
+    <script src="javascript/perfil.js"></script>
+</body>
+</html>

@@ -74,7 +74,8 @@ formRegistro.addEventListener('submit', function(e) {
     password: passwordInput.value.trim(),
     fechaNacimiento: fechaNacimientoInput.value,
     sexo: document.getElementById('sexo').value,
-    descuento
+    descuento,
+    avatar: "icons/avatar.png"
   });
 
   localStorage.setItem('usuarios', JSON.stringify(usuarios));
